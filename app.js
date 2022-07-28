@@ -50,7 +50,7 @@ function getWeather(){
                 bottomDiv.append(pWind);
                 weatherDiv.append(bottomDiv)
     
-                $("#contentBox").append(weatherDiv);
+                $("#contentBox").prepend(weatherDiv);
 
             
         })
@@ -99,7 +99,7 @@ function getWeather(){
             bottomDiv.append(pWind);
             weatherDiv.append(bottomDiv);
 
-            $("#contentBox").append(weatherDiv);
+            $("#contentBox").prepend(weatherDiv);
         })
     })
 }

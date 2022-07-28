@@ -56,7 +56,7 @@
 .bottomDiv {
     width: 50%;
     padding: 15px 0;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     background-color: #ECE5C7;
     border-radius: 0 0 25px 25px;
     
