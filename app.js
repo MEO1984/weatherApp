@@ -19,29 +19,36 @@ function getWeather(){
             .then(function(response){
                 console.log(response); 
                 var weatherDiv = $("<div>").addClass("weatherDiv");
+                var topDiv = $("<div>").addClass("topDiv")
+                var bottomDiv = $("<div>").addClass("bottomDiv")
                 // city name
                 var pCity = $("<h1>").text(response.name).addClass('cityName');
-                weatherDiv.append(pCity)
-                // current date
-                var cityDate = $("<div>").text(moment().format('L')).addClass("date")
-                weatherDiv.append(cityDate);
+                topDiv.append(pCity)
                 //weather icon
                 var imageURL = response.weather[0].icon;
-                var image = "https://openweathermap.org/img/w/" + imageURL + ".png";
+                 var image = "https://openweathermap.org/img/w/" + imageURL + ".png";
+                var imgDiv = $("<div>").addClass('imgDiv')
                 var weatherImage = $('<img>').attr('src', image).addClass('image');
-                weatherDiv.append(weatherImage);
+                imgDiv.append(weatherImage)
+                topDiv.append(imgDiv);
+                // current date
+                var cityDate = $("<h4>").text(moment().format('L')).addClass("date")
+                topDiv.append(cityDate);
+                weatherDiv.append(topDiv)
+
                 // temperature
                 var temp = Math.round(response.main.temp);
-                var pTemp = $("<p>").text("Temperature: " + temp + "\xB0 F")
-                weatherDiv.append(pTemp);
+                var pTemp = $("<p>").text("Temperature: " + temp + "\xB0").addClass("details")
+                bottomDiv.append(pTemp);
                 // humidity
                 var hum = response.main.humidity;
-                var pHum = $("<p>").text("Humidity " + hum + "%")
-                weatherDiv.append(pHum);
+                var pHum = $("<p>").text("Humidity " + hum + "%").addClass("details")
+                bottomDiv.append(pHum);
                 // wind
                 var wind = response.wind.speed;
-                var pWind = $("<p>").text("Wind Speed: " + wind + " MPH");
-                weatherDiv.append(pWind);
+                var pWind = $("<p>").text("Wind Speed: " + wind + " MPH").addClass("details");
+                bottomDiv.append(pWind);
+                weatherDiv.append(bottomDiv)
     
                 $("#contentBox").append(weatherDiv);
 
@@ -62,29 +69,35 @@ function getWeather(){
         }).then(function(response){
             console.log(response); 
             var weatherDiv = $("<div>").addClass("weatherDiv");
+            var topDiv = $("<div>").addClass("topDiv");
+            var bottomDiv = $("<div>").addClass("bottomDiv");
             // city name
             var pCity = $("<h1>").text(response.name).addClass('cityName');
-            weatherDiv.append(pCity)
-            // current date
-            var cityDate = $("<div>").text(moment().format('L')).addClass("date")
-            weatherDiv.append(cityDate);
-            //weather icon
+            topDiv.append(pCity)
+          //weather icon
             var imageURL = response.weather[0].icon;
             var image = "https://openweathermap.org/img/w/" + imageURL + ".png";
+            var imgDiv = $("<div>").addClass('imgDiv')
             var weatherImage = $('<img>').attr('src', image).addClass('image');
-            weatherDiv.append(weatherImage);
+            imgDiv.append(weatherImage)
+            topDiv.append(imgDiv)
+            // current date
+            var cityDate = $("<h4>").text(moment().format('L')).addClass("date")
+            topDiv.append(cityDate);
+            weatherDiv.append(topDiv)
             // temperature
             var temp = Math.round(response.main.temp);
-            var pTemp = $("<p>").text("Temperature: " + temp + "\xB0 F")
-            weatherDiv.append(pTemp);
+            var pTemp = $("<p>").text("Temperature: " + temp + "\xB0").addClass("details")
+            bottomDiv.append(pTemp);
             // humidity
             var hum = response.main.humidity;
-            var pHum = $("<p>").text("Humidity " + hum + "%")
-            weatherDiv.append(pHum);
+            var pHum = $("<p>").text("Humidity " + hum + "%").addClass("details")
+            bottomDiv.append(pHum);
             // wind
             var wind = response.wind.speed;
-            var pWind = $("<p>").text("Wind Speed: " + wind + " MPH");
-            weatherDiv.append(pWind);
+            var pWind = $("<p>").text("Wind Speed: " + wind + " MPH").addClass("details");
+            bottomDiv.append(pWind);
+            weatherDiv.append(bottomDiv);
 
             $("#contentBox").append(weatherDiv);
         })

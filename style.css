@@ -1,11 +1,82 @@
 * {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #354259;
+ 
 }
+
+.body {
+    background-color: #C2DED1;
+}
+
+
+
+.title {
+    padding: 3%;
+}
+
 
 .contentBox {
-    height: 500px;
+    height: auto;
+
 }
 
-.weatherDiv{
-    text-align: center;
+.button{
+    margin: 1rem;
+}
+.box {
+    margin-top: 1rem;
+}
+
+.topDiv {
+    width:50%;
+    margin: auto;
+    display: inline-block;
+    background-color: #CDC2AE;
+    border-radius: 25px 25px 0 0;
+    padding: 10px;
+    
+}
+
+.cityName {
+    display: inline-block;
+    float: left;
+}
+
+.date {
+    float: right;
+    display: inline-block;
+    padding: 10px;
+}
+
+.weatherDiv {
+    align-items: center;
+}
+
+.bottomDiv {
+    width: 50%;
+    padding: 15px 0;
+    margin: 0 auto;
+    background-color: #ECE5C7;
+    border-radius: 0 0 25px 25px;
+    
+}
+
+.imgDiv {
+    position: relative;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    padding-top: 3px;
+    
+}
+
+.image {
+    position: relative;
+
+   
+}
+
+.details {
+    display: block;
 }
